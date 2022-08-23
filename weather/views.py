@@ -1,0 +1,8 @@
+from django.shortcuts import render
+
+def index(request):
+    return render(request, 'weather/index.html')
+
+def weather(request):
+    return render(request, 'weather/weather.html')
+# Create your views here.
