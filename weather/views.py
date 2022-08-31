@@ -7,9 +7,7 @@ def index(request):
     url = "https://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=" + app_id
     city = 'Minsk'
     res = requests.get(url.format(city))
-    # print(type(json.loads(res.text)))
     main = json.loads(res.text)['main']
-    print(type(main))
     temp = main['temp']
     return render(request, 'weather/index.html', {'res':res, 'main': main, 'temp':temp})
 
